@@ -1,26 +1,19 @@
 spring:
   application:
-    name: item-service
+    name: user-service
     
-#server:
-#  port: 8001
+server:
+  port: 8101
  
 eureka:
   client:
     service-url: 
       defaultZone: http://eureka1:2001/eureka,http://eureka2:2002/eureka
-
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
       
----
-spring:
-  profiles: item1
-  
-server:
-  port: 8001
----
-spring:
-  profiles: item2
-
-server:
-  port: 8002
-      
+    
